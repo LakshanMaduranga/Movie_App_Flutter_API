@@ -98,22 +98,39 @@ class DetailScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   SizedBox(
+                    width: 185,
                     child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Colors.grey,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.grey,
+                          ),
                         ),
-                      ),
-                      child: Text(
-                        'Votes: ${movie.voteAverage}',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Ratings:',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              '${movie.voteAverage.toStringAsFixed(1)}/10',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                          ],
+                        )),
                   ),
                 ],
               ),
